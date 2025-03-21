@@ -1,0 +1,14 @@
+{
+    "customCommands": [
+        {
+            "name": "req-steps",
+            "propt": "{{{input}}}\n\n break this down into the required steps, only include the truly necessary steps",
+            "description": "way how to define required steps for refactoring"
+        },
+        {
+            "name": "less code",
+            "propt": "The feawer lines of code the better",
+            "description": "write less code"
+        }
+    ]
+}
