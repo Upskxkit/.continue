@@ -1,0 +1,6 @@
+mcpServers:
+  - name: Context7 MCP
+    command: npx
+    args:
+      - -y
+      - @upstash/context7-mcp
