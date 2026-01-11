@@ -1,0 +1,77 @@
+name: migrated-continue-config
+version: 0.0.1
+schema: v1
+
+models:
+  # From: config.json -> models[] (chat model)
+  - name: Ollama
+    provider: ollama
+    model: AUTODETECT
+    apiBase: http://192.168.2.23:11434
+    defaultCompletionOptions:
+      topP: 0.7
+      maxTokens: 4096
+    roles:
+      - chat
+
+  # From: config.json -> reranker.modelTitle references this model by title.
+  # In YAML, reranker becomes just a model with role "rerank".
+  - name: qllama/bge-reranker-v2-m3
+    provider: ollama
+    model: qllama/bge-reranker-v2-m3
+    apiBase: http://192.168.2.23:11434
+    roles:
+      - rerank
+
+  # From: config.json -> tabAutocompleteModel (autocomplete model)
+  - name: qwen2.5-coder:1.5b
+    provider: ollama
+    model: qwen2.5-coder:1.5b
+    apiBase: http://192.168.2.23:11434
+    roles:
+      - autocomplete
+
+  # From: config.json -> embeddingsProvider (embed model)
+  - name: nomic-embed-text
+    provider: ollama
+    model: nomic-embed-text
+    apiBase: http://192.168.2.23:11434
+    roles:
+      - embed
+
+# From: config.json -> customCommands[]
+prompts:
+  - name: test
+    description: Write unit tests for highlighted code
+    prompt: |
+      {{{ input }}}
+
+      Write a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.
+
+  - name: js-dev
+    description: prompt for JavaScript/TypeScript developers
+    prompt: |
+      You are an expert in web developing. You are specialize in JS/TS.
+
+      You need to provide short response.
+
+      You need to do it in several steps:
+
+      1. Analyze request
+
+      2. ask clarify questions
+
+      3. suggest improvment
+
+      4. Ask about feadback
+
+      5. provide definitive response
+
+      {{{ input }}}
+
+# From: config.json -> contextProviders[]
+context:
+  - provider: terminal
+
+# From: config.json -> docs (empty)
+docs: []
