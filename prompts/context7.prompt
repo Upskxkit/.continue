@@ -1,0 +1,17 @@
+name: context7
+description: request official documentation
+
+inputs:
+- name: library
+  description: exact package or library name
+- name: version
+  description: version or tag (optional)
+- name: context
+  description: optional usage or problem context
+
+---
+
+Resolve the canonical library ID for "{{library}}" version "{{version}}" for documentation lookup.
+
+Additional context (optional):
+{{context}}

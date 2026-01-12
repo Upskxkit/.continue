@@ -3,6 +3,6 @@ version: 0.0.1
 schema: v1
 
 mcpServers:
-  - name: context7
+  - name: Context7 MCP
     type: streamable-http
-    "url": http://192.168.2.23:8111/mcp
+    url: https://mcp.context7.com/mcp
