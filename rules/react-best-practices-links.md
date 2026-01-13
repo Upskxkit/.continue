@@ -1,5 +1,6 @@
 ---
 description: Ensure React best practices and optimization tips are easily accessible.
+globs: ["**/*.jsx", "**/*.ts", "**/*.tsx"]
 alwaysApply: false
 ---
 

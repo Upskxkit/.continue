@@ -1,5 +1,6 @@
 ---
 name: react 
+globs: ["**/*.jsx", "**/*.ts", "**/*.tsx"]
 description: react rules
 ---
 

@@ -1,7 +1,7 @@
 ---
 description: Ensure TypeScript best practices and resources are easily
   accessible for developers.
-alwaysApply: false
+globs: ["**/*.ts", "**/*.tsx"]
 ---
 
 Incorporate TypeScript best practices references:

@@ -1,6 +1,6 @@
 ---
 description: Ensure Next.js documentation links are included for common development tasks.
-alwaysApply: false
+globs: ["**/*.jsx", "**/*.ts", "**/*.tsx"]
 ---
 
 Incorporate Next.js documentation references for common tasks:
