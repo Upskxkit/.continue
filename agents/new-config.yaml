@@ -42,6 +42,17 @@ models:
     apiBase: http://192.168.2.23:11434
     roles:
       - embed
+  - name: Fast Apply 1.5B v1.0
+    provider: ollama
+    apiBase: http://192.168.2.23:11434
+    model: hf.co/dat-lequoc/Fast-Apply-1.5B-v1.0_GGUF:latest
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    defaultCompletionOptions:
+      contextLength: 32768
 
 prompts:
   - name: js/ts
